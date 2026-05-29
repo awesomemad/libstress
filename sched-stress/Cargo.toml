@@ -1,0 +1,14 @@
+[package]
+name = "sched-stress"
+description = "Thread scheduler stress for libstress (capped)"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+stress-core.workspace = true
+anyhow.workspace = true
+tracing.workspace = true

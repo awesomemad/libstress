@@ -1,0 +1,55 @@
+[workspace]
+resolver = "2"
+members = [
+    "stress-core",
+    "cpu-stress",
+    "mem-stress",
+    "io-stress",
+    "net-stress",
+    "sched-stress",
+    "compile-stress",
+    "stress-macros",
+    "runner",
+]
+default-members = ["runner"]
+
+[workspace.package]
+version = "0.2.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+authors = ["libstress contributors"]
+repository = "https://github.com/omnis/libstress"
+rust-version = "1.85"
+
+[workspace.dependencies]
+stress-core = { path = "stress-core" }
+cpu-stress = { path = "cpu-stress" }
+mem-stress = { path = "mem-stress" }
+io-stress = { path = "io-stress" }
+compile-stress = { path = "compile-stress" }
+net-stress = { path = "net-stress" }
+sched-stress = { path = "sched-stress" }
+toml = "0.8"
+
+anyhow = "1"
+blake3 = "1"
+clap = { version = "4", features = ["derive", "env"] }
+humantime = "2"
+humantime-serde = "1"
+rayon = "1"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+sysinfo = "0.33"
+thiserror = "2"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+
+[profile.stress]
+inherits = "release"
+debug = 0
+incremental = true

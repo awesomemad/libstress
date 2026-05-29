@@ -1,0 +1,48 @@
+# libstress configuration — copy to project root or ~/.config/libstress/libstress.toml
+# Use: libstress run --profile ci-quick
+
+[defaults]
+duration_secs = 30
+intensity = 5
+threads = 0
+
+[profile.ci-quick]
+duration_secs = 15
+intensity = 4
+workloads = ["cpu", "mem"]
+
+[profile.dev]
+duration_secs = 60
+intensity = 6
+workloads = ["cpu", "mem", "io"]
+
+[profile.overnight]
+duration_secs = 28800
+intensity = 7
+workloads = ["cpu", "mem", "io"]
+memory_cap_override = false
+
+[profile.compiler-torture]
+duration_secs = 1800
+intensity = 8
+workloads = ["compile"]
+compile_modules = 200
+compile_mode = "incremental"
+
+[profile.full]
+duration_secs = 300
+intensity = 8
+workloads = ["cpu", "mem", "io", "compile"]
+
+[profile.ci-full]
+duration_secs = 120
+intensity = 6
+workloads = ["cpu", "mem", "io", "compile"]
+compile_modules = 30
+compile_mode = "check"
+
+[profile.net-loopback]
+duration_secs = 30
+intensity = 5
+workloads = ["net"]
+net_port = 19456

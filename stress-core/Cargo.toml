@@ -1,0 +1,19 @@
+[package]
+name = "stress-core"
+description = "Shared utilities for the libstress framework"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+anyhow.workspace = true
+humantime.workspace = true
+serde = { workspace = true, features = ["derive"] }
+serde_json.workspace = true
+sysinfo.workspace = true
+thiserror.workspace = true
+toml = "0.8"
+tracing.workspace = true
