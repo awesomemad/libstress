@@ -1,7 +1,7 @@
 # libstress
 
 [![CI](https://github.com/omnis/libstress/actions/workflows/ci.yml/badge.svg)](https://github.com/omnis/libstress/actions/workflows/ci.yml)
-[![License: MIT OR Apache-2.0](https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-blue.svg)](LICENSE-MIT)
+[![License: GPL 3.0](https://img.shields.io/badge/license-GPL--3.0-blue.svg)](LICENSE)
 
 **libstress** is a safe-but-heavy stress testing framework for Rust developers and CI pipelines. It saturates CPU, RAM, disk I/O, the Rust compiler, and optional extras (loopback networking, thread scheduler) without privileged or destructive operations.
 
